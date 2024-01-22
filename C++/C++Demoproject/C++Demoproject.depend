@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1705043725 source:c:\users\kayalai01\desktop\aibatch\project\c++demoproject\tireone.c
+
+1705045499 source:c:\users\kayalai01\desktop\aibatch\project\c++demoproject\main.cpp
+	<iostream>
+
+1705045349 source:c:\users\kayalai01\desktop\aibatch\project\c++demoproject\tireone.cpp
+	<iostream>
+
