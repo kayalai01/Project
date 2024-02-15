@@ -1,8 +1,21 @@
-class world()
+class solarfamily():
     def __init__(self):
-        print("Welcome to world")
+        print("Welcome to solar family")
+    
+    def sun(self):
+        print("sun rise on morning")
         
-    def continent(self):
-        print("They are seven continent in this world")
+    def moon(self):
+        print("moon upcoming night")
         
-    def ocean(self)
+class glassy(solarfamily):
+    def __init__(self):
+        super().__init__()
+        super().sun()
+        super().moon()
+        
+    def star(self):
+        print("present of milkyway glassy")
+        
+s=glassy()
+s.star
