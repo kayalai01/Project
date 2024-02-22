@@ -42,11 +42,64 @@ def insertf():
     
     
 def updatef():
-    pass
+    stdname=str(name.get())
+    # Tamil=int(tbTamil.get())
+    # English=int(tbEnglish.get())
+    # Maths=int(tbMaths.get())
+    # Science=int(tbScience.get())
+    # Social=int(tbSocial.get())
+    Total=int(tbTotal.get())
+    
+    e_con=MyDBConnection()
+    result=e_con.cursor()
+    
+    statement="update Student_DB set Std_name=(%s) where Sl_no= (%s);"
+    valuepass=(stdname,Total)
+    result.execute(statement,valuepass)
+    e_con.commit()
+    
+    print (result.rowcount,"row update")
+    
+    
 def deletef():
-    pass
-def resetf():
-    pass
+    stdname=str(name.get())
+    # Tamil=int(tbTamil.get())
+    # English=int(tbEnglish.get())
+    # Maths=int(tbMaths.get())
+    # Science=int(tbScience.get())
+    # Social=int(tbSocial.get())
+    # Total=int(tbTotal.get())
+    
+    e_con=MyDBConnection()
+    result=e_con.cursor()
+    
+    statement="delete from student_db where Sl_no = (%s);"
+    valuepass=(stdname,)
+    result.execute(statement,valuepass)
+    e_con.commit()
+    
+    print (result.rowcount,"row deleted")
+    
+    
+def alterf():
+    stdname=str(name.get())
+    # Tamil=int(tbTamil.get())
+    # English=int(tbEnglish.get())
+    # Maths=int(tbMaths.get())
+    # Science=int(tbScience.get())
+    # Social=int(tbSocial.get())
+    # Total=(tbTotal.get())
+    
+    e_con=MyDBConnection()
+    result=e_con.cursor()
+    
+    statement="alter table  student_db drop column " +str(stdname)+ ";"
+    # valuepass=(Total,)
+    result.execute(statement)
+    e_con.commit()
+    
+    print(result.rowcount,"drop column")
+    
 def submitf():
     pass
 
@@ -100,7 +153,7 @@ tbTotal.grid(row=8,column=20)
 button1=Button(text="Insert",command=insertf).grid(row=12,column=21)
 button2=Button(text="Update",command=updatef).grid(row=12,column=22)
 button3=Button(text="Delete",command=deletef).grid(row=12,column=24)
-button4=Button(text="Reset",command=resetf).grid(row=12,column=26)
+button4=Button(text="Alter",command=alterf).grid(row=12,column=26)
 button5=Button(text="Submit",command=submitf).grid(row=12,column=28)
 
   
